@@ -1,0 +1,9 @@
+[
+	{ "_id" : ObjectId("5cb052b18054ea339cdc2047"), "id" : "1", "name" : "Wonder", "year" : "2017", "genre" : "Family", "date" : "10.07.2018", "group" : [ ] },
+	{ "_id" : ObjectId("5cb0546aacae93339c4c9649"), "id" : "2", "name" : "Free-Solo", "year" : "2018", "genre" : "Documentary", "date" : "10.07.2018", "group" : [ ] },
+	{ "_id" : ObjectId("5cb05560acae93339c4c964a"), "id" : "3", "name" : "Bohemian Rhapsody", "year" : "2018", "genre" : "Musical", "date" : "10.07.2018", "group" : [ ] },
+	{ "_id" : ObjectId("5cb05592acae93339c4c964b"), "id" : "5", "name" : "Adrift", "year" : "2018", "genre" : "Thriller", "date" : "10.07.2018", "group" : [ ] },
+    { "_id" : ObjectId("5cb0568eacae93339c4c964c"), "id" : "104", "name" : "Thriller", "year" : null, "genre" : null, "date" : null, "group" : [ ObjectId("5cb05592acae93339c4c964b") ]},
+	{ "_id" : ObjectId("5cb057cbacae93339c4c964d"), "id" : "105", "name" : "Documentary", "year" : null, "genre" : null, "date" : null, "group" : [ ObjectId("5cb0546aacae93339c4c9649") ]},
+	{ "_id" : ObjectId("5cb057d9acae93339c4c964e"), "id" : "106", "name" : "Family", "year" : null, "genre" : null, "date" : null, "group" : [ ObjectId("5cb052b18054ea339cdc2047") ]}
+]

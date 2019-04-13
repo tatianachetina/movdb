@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <span class="pull-left">
+            <a> {{movie.name}} </a>
+          </span>
+          </div>
+          <div class="row">
+            <div class="col.xs.6">
+              <!-- <span class="pull-left">
+                <img
+                  src={{contact.imageUrl}}
+                  alt={{contact.name}}
+                  class="img-responsive"
+                  style="max-height: 50px;">
+              </span> -->
+              <div class="pull-right">
+                <span>
+                    <a class="btn btn-info" routerLink="edit" >Edit</a>
+                </span>
+                <span>
+                    <a class="btn btn-danger" (click)="onDelete()">Delete</a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+          <div class="row">
+            <a > Year: {{movie.year}}</a>s
+          </div>
+          <div class="row">
+            <a> Genre: {{movie.genre}}</a>
+          </div>
+      </div>
+    </div>
+  </div>    
+</div>
+  
+ 
+  
+  

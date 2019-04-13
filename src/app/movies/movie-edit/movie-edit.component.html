@@ -1,0 +1,105 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <form id="movie-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+
+        <div class="col-sm-12 form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control required"
+            size="120"
+            max="120"
+            name="name"
+            [ngModel]="movie?.name"
+            required
+            #name>
+        </div>
+
+        <div class="col-sm-12 form-group">
+          <label for="year">Year</label>
+          <input
+            type="text"
+            id="year"
+            class="form-control required"
+            size="120"
+            max="255"
+            name="year"
+            [ngModel]="movie?.year"
+            //pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+            required
+            #year>
+        </div>
+
+        <div class="alert alert-danger" *ngIf="year.touched && !year.valid">
+          Enter a valid year 
+         </div>
+
+        <div class="col-sm-12 form-group">
+          <label for="genre">Genre</label>
+          <input
+            type="text"
+            id="genre"
+            class="form-control invalid"
+            size="150"
+            max="255"
+            name="genre"
+            [ngModel]="movie?.genre"
+            //pattern="\D*([2-9]\d{2})(\D*)([2-9]\d{2})(\D*)(\d{4})\D*"
+            #genre>
+
+            <div class="alert alert-danger" *ngIf="genre.touched && !genre.valid">
+              Enter a valid genre
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 form-group">
+          <label for="date">Date</label>
+          <input
+            type="text"
+            id="date"
+            class="form-control"
+            size="150"
+            max="255"
+            name="date"
+            [ngModel]="movie?.date"
+           >
+        </div>
+      </div>
+
+      <div *ngIf="(name.touched && !name.valid) || (year.touched && !year.valid)" class="alert alert-danger">“The Name and year are
+        required.”
+      </div>
+
+      <div class="form-group">
+        <label for="groupList">Group movies</label>
+
+        <div class="row" id="groupList"
+             style="min-height: 3rem;"
+             dnd-droppable [dropZones]="['movieGroup']" (onDropSuccess)="addToGroup($event)" >
+
+          <div *ngFor="let movie of groupmovies; let i = index">
+            <div>
+              <cms-movie-item class="col-sm-11" [movie]="movie"></cms-movie-item>
+              <button class="btn btn-danger col-sm-2 deleteButton" (click)="onRemoveItem(i)">X</button>
+            </div>
+          </div>
+          <span class="dragMsg" *ngIf="groupMovies?.length < 1">Drag movies in group here</span>
+        </div>
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <button [disabled]="!f.valid" class="btn btn-success" type="submit">Save</button>
+          <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
